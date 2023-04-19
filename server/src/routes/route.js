@@ -1,12 +1,20 @@
 const express = require('express')
 const router = express.Router()
+const { createUser, loginUser } = require("../controller/userController")
 const{ createAuthor}= require("../controller/authorController")
 
 
 
 //---------------------- Author's's APIs ----------------------//
+
+//===================== User Registration (Post API) =====================//
+router.post("/register", createUser)
+//===================== User Login (Post API) =====================//
+router.post("/login", loginUser)
+
 //---------------------- Author Registration(Post API) ----------------------//
-router.post("/register", createAuthor)
+router.post("/author/register", createAuthor)
+
 
 
 
